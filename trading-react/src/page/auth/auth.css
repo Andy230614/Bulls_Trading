@@ -1,0 +1,80 @@
+.authContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/src/assets/pexels-worldspectrum-844124.jpg'); /* make sure this path is correct */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+
+  /* ✅ Prevent this layer from intercepting clicks */
+  pointer-events: none;
+}
+  
+  .authCard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 35rem;
+    width: 30rem;
+    border-radius: 1rem;
+  
+    /* Adjust these values for opacity and background blur */
+    background-color: rgba(255, 255, 255, 0.1); /* Lower alpha for more transparency */
+    backdrop-filter: blur(6px); /* Reduce blur for clearer background */
+    -webkit-backdrop-filter: blur(6px);
+  
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+  }
+  
+  .loginButton {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .inputField::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .loginButton {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #10b981; /* Emerald green */
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .loginButton:hover {
+    background-color: #1e40af;
+  }
+  
