@@ -1,11 +1,11 @@
-# Use a base image with JDK 17 (or your version)
-FROM eclipse-temurin:17-jdk
-
-# Create and set working directory
+# ---------- Stage 1: Build the Spring Boot JAR ----------
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
 WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Copy the Spring Boot JAR file into the image
-COPY target/Bulls_Trading-0.0.1-SNAPSHOT.jar app.jar
-
-# Run the application
+# ---------- Stage 2: Run the JAR ----------
+FROM eclipse-temurin:17-jdk
+WORKDIR /app
+COPY --from=builder /app/target/*.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
